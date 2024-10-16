@@ -153,6 +153,7 @@ section.recent-posts {
     font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .featured-box-img-cover {
@@ -302,10 +303,6 @@ span.post-read-more a:hover {
 .mediumnavigation .navbar-brand img {
     max-height: 30px;
     margin-right: 5px;
-}
-
-.mainheading h1.sitetitle {
-    font-family: Righteous;
 }
 
 .mainheading h1.posttitle {
@@ -673,6 +670,11 @@ ul.tags li a:hover {
     margin-bottom: 1.5rem;
 }
 
+@font-face {
+    font-family: "TransformaSans_Trial";
+    src: url('../fonts/TransformaSans_Trial-Medium.otf');
+  }
+
 .h1,
 .h2,
 .h3,
@@ -685,7 +687,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: TransformaSans_Trial, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .article-post .h1,
