@@ -8,7 +8,7 @@ toc: false
 excerpt: "CTO is a one-size-fits-all title, from glorified engineer to slides-pusher, everybody makes up its meaning. Is it really that bad?"
 ---
 
-Yesterday evening, my tech-lead had a comment about the "why" of my presence to the RENT (one of the, if the _the_ biggest event in real-estate technology. [My company](https://weinvest.be) is very much a target as we are in real-estate and tech is a core pillar of our offer).
+Yesterday evening, a member of my team, the tech-lead, had a comment about the "why" of my presence to the RENT (one of the, if the _the_ biggest event in real-estate technology. [My company](https://weinvest.be) is very much a target as we are in real-estate and tech is a core pillar of our offer).
 
 Might have been classic sarcasm which kind of defines our relationship 🤓. Might have been genuine concern as to why should I spend two days at an event, seemingly a business one, definitely not a dev-event. I was kind of taken aback at the moment and could not really give a satisfactory answer because it's quite evident to me. It occurred that the "why" which is so clear to me is something I've never shared with my team. **At its core, it's about how I see my role as CTO**.
 
