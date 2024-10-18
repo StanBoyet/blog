@@ -4,7 +4,7 @@ title: "Stan's blog"
 description: "I had some things to share."
 logo: 'assets/images/pig-nose.png'
 favicon: 'assets/images/pig-nose.png'
-baseurl: 
+baseurl: ''
 # disqus: 'demowebsite'
 # mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
