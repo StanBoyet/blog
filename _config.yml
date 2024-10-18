@@ -16,7 +16,7 @@ authors:
   stan:
     name: Stan
     display_name: Stan
-    # avatar: 'assets/images/avatar.png'
+    avatar: 'assets/images/stan.png'
     gravatar: 'f49ae44285e47fcdc21eac00206002a9ba98a098147476aa9b475e088a012f0b'
     email: stan+blog@boyet.me
     # web: https://stanislas.boyet.me
@@ -29,6 +29,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-og-image
   - jekyll-archives
     
 # Archives
@@ -62,3 +63,21 @@ adsense-data-ad-slot: "1363087678"
 lazyimages: "enabled"
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+
+og_image:
+  output_dir: "/assets/og"
+  image: "/assets/images/stan-background.jpg"
+  canvas:
+    background_color: "#172C40"
+  header:
+    font_family: "Transforma Sans_Trial, Bold"
+    color: "#26E0E5"
+  content:
+    font_family: "Roboto, Regular"
+    color: "#ffffff"
+  force: false
+  domain: "stan.boyet.me"
+  border_bottom:
+    width: 20
+    fill:
+      - "#26E0E5"
