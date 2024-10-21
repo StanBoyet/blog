@@ -180,6 +180,10 @@
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 {% endif %}
 
+{% if page.mermaid %}
+{% include mermaid-js.html %}
+{% endif %}
+
 {% if jekyll.environment == 'production' %}
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 {% endif %}
