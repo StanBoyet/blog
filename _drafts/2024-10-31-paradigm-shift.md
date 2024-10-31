@@ -30,25 +30,28 @@ last year
 
 ````mermaid
 stateDiagram-v2
+  direction LR
   state "CTO" as cto
   state "Stan" as cto
-  cto --> engineers
   cto --> products
+  cto --> engineers
 
   state "Engineers" as engineers
-  state "Sandjiv" as engineers
-  state "Camilla" as engineers
-  state "Allison" as engineers
-  state "Raph" as engineers
-  state "Lars" as engineers
-  state "Nick" as engineers
-  state "Leo" as engineers
-  state "Bart" as engineers
-  state "Yash" as engineers
-  state "Manuel" as engineers
+  engineers --> backeend_engineers
+  engineers --> frontend_engineers
 
-  state "Product Manager" as products
-  state "Ryan" as products
+
+  state "Backend" as backeend_engineers
+  state "Frontend" as frontend_engineers
+  state "Sandjiv Cami" as backeend_engineers
+  state "Allison Raph" as backeend_engineers
+  state "Lars Nick Leo" as frontend_engineers
+  state "Bart Yash Manuel" as frontend_engineers
+
+  state "Products" as products
+  state "Product Manager" as product_manager
+  state "Ryan" as product_manager
+  products --> product_manager
   products --> designers
   products --> product_marketeers
   
