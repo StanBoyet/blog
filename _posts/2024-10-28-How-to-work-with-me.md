@@ -87,14 +87,14 @@ With a decision making process as inclusive as this, I expect everyone to commit
 
 If you start disagreeing with a number of them, this needs to trigger a warning for us both. Maybe I’m turning into a dictator or your vision is splitting from mine and the company’s. This should warrants action in term of communication, education or the need to take a step back from this issue to look at the bigger picture – on both ends, mine and yours. Communication is – once again – key into defusing potential tensions.
 
-### Recurring Meetings
+### Recurring Meeting – 1:1s
 
-- 1:1s are at the core of our communication. Their time is sacralised in my week and except if there is a literal fire, we won’t cancel it.
-    - They last 45 minutes max, once every 2 weeks. If we don’t have a lot to talk about, I’m not taking you hostage, but know that this time is yours, use it.
-    - You can prep them or wing them, I don’t care, but know yourself: if we’re talking about the last 3 days every session, we’re both loosing time. You will have a shared document with me with notes from our last session, use it if necessary. **They are the only meetings I take without an agenda.**
-        - The first 4 are somewhat special, as they follow these questions: [First 1on1s](https://www.notion.so/First-1on1s-ed2e97397278434dab5e558716f3b261?pvs=21)
-    - You can come with whatever you want. I will lead a bi-yearly session about your career and performance, but we’re not limited at those 2 to talk about these subjects. Bring it 🙂
-    - They will happen once every two weeks but they can move. Don’t hesitate to suggest a new time directly in the calendar. No need for 42 Slack messages (see the Communication part below in this doc.
+1:1s are at the core of our communication. Their time is sacralised in my week and except if there is a literal fire, we won’t cancel it.
+- They last 45 minutes max, once every 2 weeks. If we don’t have a lot to talk about, I’m not taking you hostage, but know that this time is yours, use it.
+- You can prep them or wing them, I don’t care, but know yourself: if we’re talking about the last 3 days every session, we’re both loosing time. You will have a shared document with me with notes from our last session, use it if necessary. **They are the only meetings I take without an agenda.**
+    - The first 4 are somewhat special, as they follow these questions: [First 1on1s](https://www.notion.so/First-1on1s-ed2e97397278434dab5e558716f3b261?pvs=21)
+- You can come with whatever you want. I will lead a bi-yearly session about your career and performance, but we’re not limited at those 2 to talk about these subjects. Bring it 🙂
+- They will happen once every two weeks but they can move. Don’t hesitate to suggest a new time directly in the calendar. No need for 42 Slack messages (see the Communication part below in this doc.
 
 This is the only meeting I work with. The rest is on-demand – from me or a team member – and can be suggested with a thorough agenda. A 1.5-hour meeting with 5 people costs 7.5 hours, almost a work day. Use these times wisely.
 
