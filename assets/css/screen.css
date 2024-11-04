@@ -236,7 +236,7 @@ span.post-read-more {
     align-items: center;
     display: inline-block;
     float: right;
-    margin-top: 8px;
+    margin-top: 0px;
 }
 
 span.post-read-more a {
@@ -900,4 +900,10 @@ iframe {
 .lazyimg[data-srcset] {
     opacity: 0;
     transition: opacity .25s;
+}
+
+code {
+    background-color: #ededed;
+    padding: 0px 4px;
+    border-radius: 3px;
 }
