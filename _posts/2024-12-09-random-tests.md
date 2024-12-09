@@ -19,7 +19,7 @@ But before telling you why I think it's a bad idea...
 ![after_all]({{ site.baseurl }}/assets/images/posts/after_all.jpg)
 
 I fell in this trope before: "Our users ended up in this obscure edge-case, they're so random lol" and believed in applying this straight to our test-suite:
-> To better align with our users' behaviour, let's apply randomness. If our tests are random, they will behave just like our users.
+> To better align with our users' behavior, let's apply randomness. If our tests are random, they will behave just like our users.
 
 Checkmate CI/CD, I win.
 
@@ -31,9 +31,9 @@ Well, not so fast. As you've seen with the title and the lengthy intro, these we
 
 ## The forest hidden behind the random
 
-My experience with introducing randomness myself was actually tyring to hide shortcomings I (sometimes) knew I had and (most of the time) did not know about.
+My experience with introducing randomness myself was actually trying to hide shortcomings I (sometimes) knew I had and (most of the time) did not know about.
 
-About my first example and users' allegeded randomness, it's a clue of a deeper issue: users are not random, they're just not behaving like you planned they would. And ~~maybe~~ they're not to blame for it. You most likely have a classic case of mis-monitoring on your hands, or worst: a mis-alignment of what you delivered vs what they expected.
+About my first example and users' alleged randomness, it's a clue of a deeper issue: users are not random, they're just not behaving like you planned they would. And ~~maybe~~ they're not to blame for it. You most likely have a classic case of mis-monitoring on your hands, or worst: a mis-alignment of what you delivered vs what they expected.
 
 ### Where do we start?
 
@@ -46,10 +46,10 @@ I think a healthy process looks like:
 
 ## What should we expect as a result?
 
-### We want repeatibility
-In our CI/CD pipeline, we want _meaning_ behing a failure. Nothing more frustrating that a red test-suite following a change that has nothing to do with said-failure. It failure there is, I want and expect it to be related to what I just changed.
+### We want repeatability
+In our CI/CD pipeline, we want _meaning_ behind a failure. Nothing more frustrating that a red test-suite following a change that has nothing to do with said-failure. It failure there is, I want and expect it to be related to what I just changed.
 
-Not entirely related to randomness but very much related to repeatibility: we used to have a failing test-suite on thursday afternoons. Why? As you've guessed it: week-end was just around the corner and we were trying to compute work-week deadlines. During this half-day, our test data was skewed and we could not deploy on thursdays. Of course I'm exaggerating, we weren't stuck per se, but for the sake of the thought experiment, try to explain to your support team that on Thursday afternoons you can't deploy fixes because... it's thursday. (Please don't, at least invent something about [cosmic rays](https://en.wikipedia.org/wiki/Soft_error#Cosmic_rays_creating_energetic_neutrons_and_protons))
+Not entirely related to randomness but very much related to repeatability: we used to have a failing test-suite on thursday afternoons. Why? As you've guessed it: week-end was just around the corner and we were trying to compute work-week deadlines. During this half-day, our test data was skewed and we could not deploy on thursdays. Of course I'm exaggerating, we weren't stuck per se, but for the sake of the thought experiment, try to explain to your support team that on Thursday afternoons you can't deploy fixes because... it's thursday. (Please don't, at least invent something about [cosmic rays](https://en.wikipedia.org/wiki/Soft_error#Cosmic_rays_creating_energetic_neutrons_and_protons))
 
 ### Cover those edge-cases
 As stated before, I would not advise to start with that, but it should be the objective you have in mind. Why? Because the day the pipeline breaks, it's for a good reason. You know the failure is relevant _now_. Not on thursday afternoons or in 150 attempts.
