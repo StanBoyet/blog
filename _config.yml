@@ -2,10 +2,10 @@
 name: "This is Stan"
 title: "This is Stan"
 description: "I had some things to share."
-logo: 'assets/images/pig-nose.png'
-favicon: 'assets/images/pig-nose.png'
-baseurl: ''
-url: 'https://stan.boyet.me'
+logo: "assets/images/stan-logo.png"
+favicon: "assets/images/pig-nose.png"
+baseurl: ""
+url: "https://stan.boyet.me"
 # disqus: 'demowebsite'
 # mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
@@ -16,8 +16,8 @@ authors:
   stan:
     name: Stan
     display_name: Stan
-    avatar: 'assets/images/stan.png'
-    gravatar: 'f49ae44285e47fcdc21eac00206002a9ba98a098147476aa9b475e088a012f0b'
+    avatar: "assets/images/stan.png"
+    gravatar: "f49ae44285e47fcdc21eac00206002a9ba98a098147476aa9b475e088a012f0b"
     email: stan+blog@boyet.me
     # web: https://stanislas.boyet.me
     twitter: https://twitter.com/stanboyet
@@ -31,19 +31,19 @@ plugins:
   - jekyll-seo-tag
   - jekyll-og-image
   - jekyll-archives
-    
+
 # Archives
 jekyll-archives:
   enabled:
     - categories
   layout: archive
   permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
+    category: "/category/:name/"
+
+# Pagination
 paginate: 6
 paginate_path: /page:num/
-    
+
 # Other
 markdown: kramdown
 
