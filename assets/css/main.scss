@@ -167,6 +167,11 @@ a {
   color: var(--text);
 }
 
+/* ── Page layout top spacing ─────────────────────────────── */
+.page-content {
+  padding-top: 2.5rem;
+}
+
 /* ── Section titles ───────────────────────────────────────── */
 .section-title {
   border-bottom: 1px solid var(--border) !important;
