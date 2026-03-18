@@ -1,15 +1,741 @@
 ---
-# Add a comment to make this file sass-y.
-# Change this file for any custom CSS.
+# Blog theme — stqn design system
 ---
 
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
-.post-excerpt p {
-	display:inline;
+/* ── Design tokens (matches stqn-technology/landing) ──────── */
+:root {
+  --bg:           #F8FAFC;
+  --surface:      #FFFFFF;
+  --text:         #0F172A;
+  --text-muted:   #64748B;
+  --text-subtle:  #94A3B8;
+  --accent:       #2563EB;
+  --accent-tint:  #EFF6FF;
+  --border:       #E2E8F0;
+  --dark-bg:      #0F172A;
+  --dark-surface: #1E293B;
+  --dark-border:  rgba(255,255,255,0.08);
+  --radius:       6px;
+  --mono:         'JetBrains Mono', monospace;
+  --sans:         'Inter', sans-serif;
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+/* ── Base ─────────────────────────────────────────────────── */
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sans);
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.post-excerpt p {
+  display: inline;
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.mediumnavigation {
+  background: rgba(248, 250, 252, 0.92) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  height: 56px;
+  padding: 0 1rem;
+}
+
+/* Remove Bootstrap's default vertical padding so content stays within 56px */
+.mediumnavigation.navbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Brand area: fill the full 56px height and clip overflow */
+.mediumnavigation .navbar-brand {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar-brand img {
+  height: 40px !important;
+  width: 40px !important;
+  max-height: 40px !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Vertically center all items in the nav list */
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+  padding: 0.25rem 0.75rem !important;
+  line-height: 1;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--text) !important;
+}
+
+/* Search form sits directly in <ul>, needs flex centering */
+.bd-search {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar-toggler {
+  border-color: var(--border);
+}
+
+#search-input {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+#search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ── Site content ─────────────────────────────────────────── */
+.site-content {
+  margin-top: 56px;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+  background: var(--bg);
+}
+
+/* ── Main heading / site hero ─────────────────────────────── */
+.mainheading {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: none;
+}
+
+.sitetitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1.08;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.posttitle {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* ── Section titles ───────────────────────────────────────── */
+.section-title {
+  border-bottom: 1px solid var(--border) !important;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+}
+
+.section-title h2 {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0;
+  border-bottom: none !important;
+}
+
+.section-title h2 span {
+  color: var(--accent);
+  background: none;
+  padding: 0;
+}
+
+/* ── Post cards ───────────────────────────────────────────── */
+.listrecent .card {
+  position: relative;
+  border: 1px solid var(--border) !important;
+  border-radius: calc(var(--radius) + 2px) !important;
+  background: var(--surface);
+  box-shadow: none !important;
+  transition: background 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+
+.listrecent .card:hover {
+  background: var(--accent-tint);
+  border-color: rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Full-card click overlay — stretches the title link across the whole card */
+.card-title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Keep the bookmark icon above the overlay so it stays interactive */
+.post-read-more {
+  position: relative;
+  z-index: 2;
+}
+
+.card-body {
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.card-footer {
+  background: transparent !important;
+  border-top: 1px solid var(--border) !important;
+  padding: 0.75rem 1.5rem 0.5rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.card-title a {
+  color: var(--text) !important;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.card-title a:hover {
+  color: var(--accent) !important;
+}
+
+.card-text {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.wrapfooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-date {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+}
+
+.post-read-more a svg {
+  fill: var(--text-subtle);
+  transition: fill 0.15s;
+}
+
+.post-read-more a:hover svg {
+  fill: var(--accent);
+}
+
+/* ── Article / post content ───────────────────────────────── */
+.article-post {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.article-post h1,
+.article-post h2,
+.article-post h3,
+.article-post h4,
+.article-post h5,
+.article-post h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-post h2 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); }
+.article-post h3 { font-size: 1.1875rem; }
+
+.article-post a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+  transition: border-color 0.15s;
+}
+
+.article-post a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.article-post code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: var(--accent-tint);
+  color: var(--accent);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+
+.article-post pre,
+.article-post .highlight {
+  background: var(--dark-bg);
+  color: #E2E8F0;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Inner pre/table inside highlight — no double padding or border */
+.article-post .highlight pre,
+.article-post .highlight table {
+  background: transparent;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.article-post pre code {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  background: none;
+  color: #E2E8F0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.article-post blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent-tint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.article-post blockquote p { margin: 0; }
+
+.article-post img {
+  border-radius: var(--radius);
+  max-width: 100%;
+}
+
+/* ── TOC ──────────────────────────────────────────────────── */
+.toc {
+  background: var(--accent-tint);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.toc h3 {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 0;
+}
+
+/* ── Post date / metadata after article ───────────────────── */
+p .post-date {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+}
+
+/* ── Tags / categories pills ──────────────────────────────── */
+.after-post-cats .tags,
+.after-post-tags .tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.after-post-cats .tags li a,
+.after-post-tags .tags li a {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-tint);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--radius);
+  padding: 0.25rem 0.625rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.after-post-cats .tags li a:hover,
+.after-post-tags .tags li a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── Author box ───────────────────────────────────────────── */
+.post-top-meta {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  margin-top: 1.5rem;
+}
+
+.author-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.link-dark {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text) !important;
+  text-decoration: none;
+}
+
+/* ── Prev/next navigation ─────────────────────────────────── */
+.PageNavigation {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.PageNavigation a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.PageNavigation a:hover {
+  color: var(--accent);
+}
+
+/* ── Share sidebar ────────────────────────────────────────── */
+.share {
+  padding: 1rem 0;
+}
+
+.share p {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.share ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.share ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.share ul li a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.share .sep {
+  border-top: 1px solid var(--border);
+  margin: 0.75rem 0;
+}
+
+/* ── Pagination ───────────────────────────────────────────── */
+.bottompagination {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.pointerup {
+  display: none;
+}
+
+.navigation .pagination {
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navigation .page-link {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) !important;
+  padding: 0.375rem 0.75rem;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.navigation .page-link:hover {
+  color: var(--accent);
+  background: var(--accent-tint);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.navigation .page-item.active .page-link {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.navigation .page-item.disabled .page-link {
+  color: var(--text-subtle);
+  background: transparent;
+}
+
+/* ── Search results ───────────────────────────────────────── */
+#results-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 280px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  z-index: 200;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+#results-container li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+#results-container li a:hover {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+/* ── Misc / utility ───────────────────────────────────────── */
+.graybg {
+  background: var(--bg) !important;
+}
+
+.jumbotron.fortags {
+  background: var(--dark-bg);
+  border-radius: 0;
+}
+
+.jumbotron.fortags h2,
+.jumbotron.fortags a {
+  color: #E2E8F0;
+}
+
+footer.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.alertbar {
+  background: var(--dark-bg);
+  border-top: 1px solid var(--dark-border);
+  color: #E2E8F0;
+}
+
+.alertbar input[type="email"] {
+  border: 1px solid var(--dark-border);
+  background: var(--dark-surface);
+  color: #E2E8F0;
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.alertbar input[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.alertbar input[type="submit"]:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.spoiler {
+  background: var(--dark-bg);
+  color: var(--dark-bg);
+  border-radius: var(--radius);
+  padding: 0.125rem 0.5rem;
+  transition: color 0.2s;
+}
+
+.spoiler:hover {
+  color: #E2E8F0;
+}
+
+/* ── mb-30px spacing ──────────────────────────────────────── */
+.mb-30px {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Container max-width ──────────────────────────────────── */
+.container {
+  max-width: 1000px !important;
+}
+
+/* ── Neutralize screen.css section-title span borders ─────── */
+.section-title span {
+  border-bottom: none !important;
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ── Hero label (mono domain label above site title) ─────── */
+.hero-label {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.footer-tagline {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-subtle);
+}
+
+/* ── Scroll reveal ───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// Import partials from `_sass`
 @import
-	"syntax",
-    "starsnonscss"
+  "syntax",
+  "starsnonscss"
 ;
