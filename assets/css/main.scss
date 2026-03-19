@@ -172,6 +172,13 @@ a {
   padding-top: 2.5rem;
 }
 
+.page-content .article-post {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 1.75rem 2rem;
+}
+
 /* ── Section titles ───────────────────────────────────────── */
 .section-title {
   border-bottom: 1px solid var(--border) !important;
