@@ -15,7 +15,6 @@ group :jekyll_plugins do
     gem 'jekyll-paginate'
     gem 'jekyll-seo-tag'
     gem 'jekyll-og-image'
-    gem 'jekyll-archives'
     gem 'kramdown'
     gem 'rouge'
     gem 'csv'

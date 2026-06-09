@@ -1,6 +1,7 @@
 # Site
 name: "This is Stan"
 title: "This is Stan"
+tagline: "Notes on engineering leadership, the CTO role, and building software"
 description: "I had some things to share."
 logo: "assets/images/stan-logo.png"
 favicon: "assets/images/pig-nose.png"
@@ -23,6 +24,11 @@ authors:
     twitter: https://twitter.com/stanboyet
     description: "Hi, this is Stan."
 
+# Twitter / X (drives twitter:site card meta)
+twitter:
+  username: stanboyet
+  card: summary_large_image
+
 # Plugins
 plugins:
   - jekyll-paginate
@@ -30,15 +36,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-og-image
-  - jekyll-archives
-
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: "/category/:name/"
 
 # Pagination
 paginate: 6

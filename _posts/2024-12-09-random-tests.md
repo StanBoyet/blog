@@ -16,7 +16,7 @@ Today, though, I want to talk about another aspect of our test-suite. It'll be a
 But before telling you why I think it's a bad idea...
 
 ## After all, why not...?
-![after_all]({{ site.baseurl }}/assets/images/posts/after_all.jpg)
+![“After all… why not?” reaction meme]({{ site.baseurl }}/assets/images/posts/after_all.jpg)
 
 I fell in this trope before: "Our users ended up in this obscure edge-case, they're so random lol" and believed in applying this straight to our test-suite:
 > To better align with our users' behavior, let's apply randomness. If our tests are random, they will behave just like our users.
