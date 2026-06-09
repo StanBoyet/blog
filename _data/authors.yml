@@ -1,0 +1,6 @@
+# Consumed by jekyll-seo-tag to resolve author/publisher name and twitter:creator.
+# (The `authors:` block in _config.yml is what the theme templates use for the
+#  author box/avatar — both are kept intentionally.)
+stan:
+  name: Stan Boyet
+  twitter: stanboyet

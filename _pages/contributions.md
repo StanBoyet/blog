@@ -2,6 +2,7 @@
 layout: page
 title: Contributions
 permalink: /contributions
+description: "Conference talks and podcast episodes featuring Stan Boyet on engineering leadership, the CTO role, and tech."
 comments: false
 ---
 

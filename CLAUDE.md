@@ -39,7 +39,6 @@ Posts use YAML front matter. Key fields:
 layout: post
 title: "Post Title"
 author: stan
-categories: [Category]
 tags: [tag1, tag2]
 image: assets/images/filename.jpg  # OG image source
 featured: true  # optional, shows in featured section
@@ -56,5 +55,4 @@ Never include "Co-Authored-By" in commit messages, PR descriptions, or anywhere 
 
 - `jekyll-paginate` — 6 posts per page
 - `jekyll-og-image` — Auto-generates Open Graph images from post metadata
-- `jekyll-archives` — Category/tag archive pages
 - `jekyll-sitemap`, `jekyll-feed`, `jekyll-seo-tag`
