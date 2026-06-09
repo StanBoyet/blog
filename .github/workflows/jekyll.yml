@@ -67,3 +67,46 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_STATUS: ${{ job.status }}
+          COMMIT_SHA: ${{ github.sha }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram secrets not set, skipping notification."
+            exit 0
+          fi
+          case "$DEPLOY_STATUS" in
+            success)   ICON="✅" ;;
+            failure)   ICON="❌" ;;
+            cancelled) ICON="⚠️" ;;
+            *)         ICON="❔" ;;
+          esac
+          if PR_API_RESPONSE=$(curl -fsS \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${COMMIT_SHA}/pulls" 2>&1); then
+            PR_TITLE=$(printf '%s' "$PR_API_RESPONSE" | jq -r '.[0].title // empty')
+          else
+            echo "::warning::PR title lookup failed (HTTP error): $PR_API_RESPONSE"
+            PR_TITLE=""
+          fi
+          if [ -n "$PR_TITLE" ]; then
+            MESSAGE=$(printf '%s This is Stan deploy %s\n%s' "$ICON" "$DEPLOY_STATUS" "$PR_TITLE")
+          else
+            MESSAGE=$(printf '%s This is Stan deploy %s' "$ICON" "$DEPLOY_STATUS")
+          fi
+          if [ "$DEPLOY_STATUS" = "success" ] && [ -n "$PAGE_URL" ]; then
+            MESSAGE=$(printf '%s\n%s' "$MESSAGE" "$PAGE_URL")
+          fi
+          curl -fsS -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MESSAGE}" \
+            > /dev/null
