@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<!-- Begin Snippet
+================================================== -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-8">
+
+            <article class="snippet">
+
+                <!-- Eyebrow -->
+                <p class="snippet-eyebrow">Snippet</p>
+
+                <!-- Title -->
+                <h1 class="snippet-title">{{ page.title }}</h1>
+
+                <!-- Subtitle -->
+                {% if page.subtitle %}
+                <p class="snippet-subtitle">{{ page.subtitle }}</p>
+                {% endif %}
+
+                <!-- Content: a few lines of context + code -->
+                <div class="article-post snippet-body">
+                    {{ content }}
+                </div>
+
+                <!-- Footer: date + tags -->
+                <footer class="snippet-footer">
+                    <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+                    {% if page.tags.size > 0 %}
+                    <ul class="tags">
+                        {% assign sortedTags = page.tags | sort %}
+                        {% for tag in sortedTags %}
+                        <li><a href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </footer>
+
+            </article>
+
+        </div>
+    </div>
+</div>
+<!-- End Snippet
+================================================== -->

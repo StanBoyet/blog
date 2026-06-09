@@ -55,13 +55,7 @@ a {
   border-bottom: 1px solid var(--border) !important;
   box-shadow: none !important;
   height: 56px;
-  padding: 0 1rem;
-}
-
-/* Remove Bootstrap's default vertical padding so content stays within 56px */
-.mediumnavigation.navbar {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding: 0 1rem !important;
 }
 
 /* Brand area: fill the full 56px height and clip overflow */
@@ -277,7 +271,7 @@ a {
 
 .post-date {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.08em;
   color: var(--text-subtle);
   text-transform: uppercase;
@@ -402,14 +396,6 @@ a {
   margin-top: 0;
 }
 
-/* ── Post date / metadata after article ───────────────────── */
-p .post-date {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-}
 
 /* ── Tags / categories pills ──────────────────────────────── */
 .after-post-cats .tags,
@@ -539,9 +525,6 @@ p .post-date {
   padding: 2rem 0;
 }
 
-.pointerup {
-  display: none;
-}
 
 .navigation .pagination {
   justify-content: center;
@@ -575,7 +558,22 @@ p .post-date {
   background: transparent;
 }
 
-/* ── Search results ───────────────────────────────────────── */
+/* ── Lunr search result items ────────────────────────────── */
+.lunrsearchresult a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.lunrsearchresult .title { color: var(--accent); }
+.lunrsearchresult .url   { color: var(--text-subtle); }
+
+.lunrsearchresult a:hover,
+.lunrsearchresult a:focus { text-decoration: none; }
+
+.lunrsearchresult a:hover .title { text-decoration: underline; }
+
+/* ── Search results dropdown ─────────────────────────────── */
 #results-container {
   position: absolute;
   top: 100%;
@@ -620,12 +618,6 @@ p .post-date {
   color: #E2E8F0;
 }
 
-footer.footer {
-  border-top: 1px solid var(--border);
-  padding: 1.75rem 0;
-  font-size: 0.78rem;
-  color: var(--text-subtle);
-}
 
 .alertbar {
   background: var(--dark-bg);
@@ -744,6 +736,102 @@ footer.footer {
     transform: none;
     transition: none;
   }
+}
+
+/* ── Snippets ─────────────────────────────────────────────── */
+.snippet {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.snippet-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.snippet-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.snippet-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Tighten the body: this is code-first, prose is minimal */
+.snippet-body {
+  font-size: 1rem;
+}
+
+.snippet-body > p:first-child {
+  margin-top: 0;
+}
+
+.snippet-body h2,
+.snippet-body h3 {
+  font-family: var(--mono);
+  font-size: 0.8125rem !important;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+/* A file-name header sits right on top of its code block.
+   Rouge wraps code in .highlighter-rouge > .highlight, so target both:
+   the wrapper's top margin and the inner block whose margin collapses up. */
+.snippet-body h2 + .highlighter-rouge,
+.snippet-body h3 + .highlighter-rouge,
+.snippet-body h2 + .highlighter-rouge .highlight,
+.snippet-body h3 + .highlighter-rouge .highlight,
+.snippet-body h2 + pre,
+.snippet-body h3 + pre {
+  margin-top: 0;
+}
+
+.snippet-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+}
+
+.snippet-footer .tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.snippet-footer .tags a {
+  color: var(--text-subtle);
+  border-bottom: none;
+}
+
+.snippet-footer .tags a:hover {
+  color: var(--accent);
 }
 
 // Import partials from `_sass`
