@@ -232,19 +232,7 @@ span.post-read {
     color: rgba(0, 0, 0, .44);
 }
 
-span.post-read-more {
-    align-items: center;
-    display: inline-block;
-    float: right;
-    margin-top: 0px;
-}
-
-span.post-read-more a {
-    color: rgba(0, 0, 0, .44);
-}
-
-span.post-name a,
-span.post-read-more a:hover {
+span.post-name a {
     color: rgba(0, 0, 0, .8);
 }
 
