@@ -4,7 +4,7 @@ title: Hi, this is Stan.
 permalink: /about/
 redirect_from:
   - /about.html
-description: "Stan Boyet — CTO at We Invest. I lead engineering teams, write some Ruby, and accrue my fair share of technical debt."
+description: "Stan Boyet, CTO at We Invest. I lead engineering teams, write some Ruby, and accrue my fair share of technical debt."
 comments: false
 ---
 
