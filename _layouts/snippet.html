@@ -10,9 +10,6 @@ layout: default
 
             <article class="snippet">
 
-                <!-- Eyebrow -->
-                <p class="snippet-eyebrow">Snippet</p>
-
                 <!-- Title -->
                 <h1 class="snippet-title">{{ page.title }}</h1>
 
@@ -28,6 +25,7 @@ layout: default
 
                 <!-- Footer: date + tags -->
                 <footer class="snippet-footer">
+                    <span class="post-type post-type--snippet">Snippet</span>
                     <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
                     {% if page.tags.size > 0 %}
                     <ul class="tags">
