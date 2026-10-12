@@ -57,17 +57,17 @@
 
 :root {
   /* Ground and inks (contrast measured on --bg) */
-  --bg:          #FFFEFB;
+  --bg:          #F5F1EA;
   --text:        #17130F;   /* headings, strong text */
-  --body:        #2A241E;   /* running text, 14.8:1 */
-  --muted:       #4E443A;   /* secondary text, 9.3:1 */
-  --faint:       #5E5348;   /* footer, captions, 7.2:1 */
-  --brick:       #A02E14;   /* links, accents, 7.3:1 */
+  --body:        #2A241E;   /* running text, 13.6:1 */
+  --muted:       #4E443A;   /* secondary text, 8.4:1 */
+  --faint:       #5E5348;   /* footer, captions, 6.6:1 */
+  --brick:       #A02E14;   /* links, accents, 6.4:1 */
   --brick-deep:  #7A200B;   /* link hover */
   --mustard:     #F0B429;   /* fills and highlights only, never text */
   --mustard-soft:#FBE7B2;   /* hover washes, soft fills */
   --rule:        #CDBBA6;   /* hairlines */
-  --wash:        #F3E7D6;   /* quiet fills */
+  --wash:        #EBE2D3;   /* quiet fills */
   --pass:        #2F8A4B;
   --fail:        #C8341B;
 
