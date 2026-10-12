@@ -7,7 +7,7 @@ tags: [ git, github ]
 excerpt: "One GitHub account, two emails, and a conditional include so git picks the right identity based on the folder a repo lives in."
 ---
 
-Add both emails to a single GitHub account and verify them (**Settings → Emails**) — GitHub attributes a commit to your profile by matching the author email. Then let git pick the identity by folder: anything under `~/work/` is professional, everything else is personal. Clone by intent and you never touch `user.email` again.
+Add both emails to a single GitHub account and verify them (**Settings → Emails**). GitHub attributes a commit to your profile by matching the author email. Then let git pick the identity by folder: anything under `~/work/` is professional, everything else is personal. Clone by intent and you never touch `user.email` again.
 
 ### `~/.gitconfig`
 

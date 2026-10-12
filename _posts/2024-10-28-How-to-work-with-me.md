@@ -13,7 +13,7 @@ This is a document I’ve shared at the last two companies I took on the <a href
 </blockquote>
 
 
-I believe it’ll help us cover a lot of ground in term of communication, leadership and expectations. This is a living document that can — and should — be challenged. It’s supposed to serve as a “moral contract”, so as with any contract, it needs to work for both parties.
+I believe it’ll help us cover a lot of ground in term of communication, leadership and expectations. This is a living document that can, and should, be challenged. It’s supposed to serve as a “moral contract”, so as with any contract, it needs to work for both parties.
 
 A note with which I’d like to preface the entire document:
 
@@ -71,7 +71,7 @@ Failing to meet a deadline is fine as long as:
 ### Decision Making
 
 <aside>
-⚠️ This — especially — is a work in progress on my end, so be sure to be particularly challenging with me on this topic!
+⚠️ This one especially is a work in progress on my end, so be sure to be particularly challenging with me on this topic!
 
 </aside>
 
