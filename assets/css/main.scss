@@ -35,7 +35,7 @@ a {
   transition: text-decoration-color 0.2s var(--ease);
 }
 /* Text color stays put on hover (and wins over Bootstrap's blue) */
-a:hover { color: inherit; }
+a:hover { color: inherit; text-decoration-color: var(--mustard); }
 
 :focus-visible { outline: 2px solid var(--brick); outline-offset: 3px; border-radius: 3px; }
 
@@ -80,7 +80,7 @@ a:hover { color: inherit; }
   text-underline-offset: 0.3em;
   padding: 0.5rem 0.75rem !important;
 }
-.navbar-nav .nav-link:hover { text-decoration-color: var(--rule); }
+.navbar-nav .nav-link:hover { text-decoration-color: var(--mustard); }
 .navbar-nav .nav-item.active .nav-link { text-decoration-color: var(--mustard); }
 
 .navbar-toggler { border: 1px solid var(--rule); border-radius: 999px; padding: 0.35rem 0.6rem; }
