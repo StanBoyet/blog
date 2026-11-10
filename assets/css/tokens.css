@@ -62,7 +62,7 @@
   --body:        #2A241E;   /* running text, 13.6:1 */
   --muted:       #4E443A;   /* secondary text, 8.4:1 */
   --faint:       #5E5348;   /* footer, captions, 6.6:1 */
-  --brick:       #A02E14;   /* links, accents, 6.4:1 */
+  --brick:       #A02E14;   /* accents, focus rings, 6.4:1 */
   --brick-deep:  #7A200B;   /* link hover */
   --mustard:     #F0B429;   /* fills and highlights only, never text */
   --mustard-soft:#FBE7B2;   /* hover washes, soft fills */

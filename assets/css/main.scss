@@ -28,13 +28,20 @@ h1, h2, h3, h4, h5, h6 {
 ::selection { background: var(--mustard); color: var(--text); }
 
 a {
-  color: var(--brick);
+  color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
-  transition: color 0.2s var(--ease), text-decoration-thickness 0.2s var(--ease);
+  /* Hover: a highlighter stroke brushed in from left to right, same band as the landing h1 mark */
+  background-image: linear-gradient(transparent 58%, var(--mustard) 58%, var(--mustard) 94%, transparent 94%);
+  background-repeat: no-repeat; background-position: left; background-size: 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  transition: text-decoration-color 0.2s var(--ease), background-size 0.45s var(--ease);
 }
-a:hover { color: var(--brick-deep); text-decoration-thickness: 3px; }
+/* Text color stays put on hover (and wins over Bootstrap's blue) */
+a:hover { color: inherit; background-size: 100% 100%; }
+/* No brush on the wordmark, buttons, cards, or the boxed links that have their own hover fill */
+.navbar-brand, .btn, .card-title a, .link-dark, .tags a, .PageNavigation a, .share a, .pagination a, .lunrsearchresult a { background-image: none; }
 
 :focus-visible { outline: 2px solid var(--brick); outline-offset: 3px; border-radius: 3px; }
 
@@ -305,8 +312,6 @@ a:hover { color: var(--brick-deep); text-decoration-thickness: 3px; }
 .article-post h4 { font-size: 1.0625rem; }
 .article-post h6 { font-size: 1rem; }
 
-.article-post a { color: var(--brick); }
-.article-post a:hover { color: var(--brick-deep); }
 .article-post strong { color: var(--text); font-weight: 600; }
 
 .article-post code {
@@ -449,6 +454,7 @@ a:hover { color: var(--brick-deep); text-decoration-thickness: 3px; }
   transition: background-color 0.2s var(--ease), transform 0.3s var(--ease);
 }
 .share ul li a:hover { background: var(--mustard); color: var(--text); transform: rotate(-8deg); }
+.share ul li a[aria-label="Share on LinkedIn"]:hover { background: #0A66C2; border-color: #0A66C2; color: var(--bg); }
 .share .sep { border-top: 1px solid var(--rule); margin: 0.75rem auto; width: 40px; }
 
 @media (max-width: 767px) {
