@@ -32,16 +32,10 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
-  /* Hover: a highlighter stroke brushed in from left to right, same band as the landing h1 mark */
-  background-image: linear-gradient(transparent 58%, var(--mustard) 58%, var(--mustard) 94%, transparent 94%);
-  background-repeat: no-repeat; background-position: left; background-size: 0% 100%;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone;
-  transition: text-decoration-color 0.2s var(--ease), background-size 0.45s var(--ease);
+  transition: text-decoration-color 0.2s var(--ease);
 }
 /* Text color stays put on hover (and wins over Bootstrap's blue) */
-a:hover { color: inherit; background-size: 100% 100%; }
-/* No brush on the wordmark, buttons, cards, or the boxed links that have their own hover fill */
-.navbar-brand, .btn, .card-title a, .link-dark, .tags a, .PageNavigation a, .share a, .pagination a, .lunrsearchresult a { background-image: none; }
+a:hover { color: inherit; }
 
 :focus-visible { outline: 2px solid var(--brick); outline-offset: 3px; border-radius: 3px; }
 
